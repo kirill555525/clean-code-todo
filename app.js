@@ -57,7 +57,7 @@ const addTask = function () {
 };
 
 const editTask = function () {
-  const listItem = this.parentNode;
+  const listItem = event.currentTarget.parentNode;
 
   const editInput = listItem.querySelector('input[type=text]');
   const label = listItem.querySelector('label');
@@ -78,19 +78,19 @@ const editTask = function () {
 };
 
 const deleteTask = function () {
-  const listItem = this.parentNode;
+  const listItem = event.currentTarget.parentNode;
   const ul = listItem.parentNode;
   ul.removeChild(listItem);
 };
 
 const taskCompleted = function () {
-  const listItem = this.parentNode;
+  const listItem = event.currentTarget.parentNode;
   completedTasksHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskIncomplete);
 };
 
 const taskIncomplete = function () {
-  const listItem = this.parentNode;
+  const listItem = event.currentTarget.parentNode;
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
 };
